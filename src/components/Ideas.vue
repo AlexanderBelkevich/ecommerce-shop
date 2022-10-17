@@ -5,14 +5,14 @@
       description="A global brand with local beginnings, our story begain in a small studio in South London in early 2014"
       colorTitle="#fff"
       colorDescription="#fff"
-      background="#2A254B"
-      colorLink="#fff"/>
-    <img src="/img/room.jpg" alt="room">
+      background="var(--primary)"
+    />
+    <img src="/img/room.jpg" alt="room" />
   </div>
 </template>
 
 <script setup>
-import HeroInformation from './HeroInformation.vue'
+import HeroInformation from "@/components/HeroInformation.vue";
 </script>
 
 <style lang="scss" scoped>
