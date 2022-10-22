@@ -4,7 +4,7 @@
     :class="[
       'btn',
       {
-        'btn--primary': color === 'primary',
+        'btn--dark-primary': color === 'dark-primary',
         'btn--secondary': color === 'secondary',
         'btn--lightgray': color === 'lightgray',
       },
@@ -18,7 +18,7 @@
     :class="[
       'btn',
       {
-        'btn--primary': color === 'primary',
+        'btn--dark-primary': color === 'dark-primary',
         'btn--secondary': color === 'secondary',
         'btn--lightgray': color === 'lightgray',
       },
@@ -44,7 +44,7 @@ const props = defineProps({
   },
   color: {
     type: String,
-    default: "primary",
+    default: "dark-primary",
   },
 });
 </script>
@@ -63,8 +63,8 @@ const props = defineProps({
   &:hover {
     opacity: 0.8;
   }
-  &--primary {
-    background: var(--primary);
+  &--dark-primary {
+    background: var(--dark-primary);
     color: #fff;
   }
   &--secondary {
@@ -72,12 +72,12 @@ const props = defineProps({
     color: #fff;
   }
   &--lightgray {
-    background: #f9f9f9;
-    color: var(--primary);
+    background: var(--lightgray);
+    color: var(--dark-primary);
   }
   &--white {
     background: #fff;
-    color: var(--primary);
+    color: var(--dark-primary);
   }
 }
 </style>

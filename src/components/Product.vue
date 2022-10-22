@@ -33,7 +33,7 @@ const props = defineProps({
   }
   &-name {
     display: block;
-    color: var(--primary);
+    color: var(--dark-primary);
     font-size: 20px;
     line-height: 28px;
     font-family: var(--clash);
@@ -46,7 +46,7 @@ const props = defineProps({
   &-price {
     display: block;
     font-size: 18px;
-    color: var(--primary);
+    color: var(--dark-primary);
   }
 }
 </style>

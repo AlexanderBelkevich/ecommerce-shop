@@ -5,7 +5,7 @@
       description="A global brand with local beginnings, our story begain in a small studio in South London in early 2014"
       colorTitle="#fff"
       colorDescription="#fff"
-      background="var(--primary)"
+      background="var(--dark-primary)"
     />
     <img src="/img/room.jpg" alt="room" />
   </div>

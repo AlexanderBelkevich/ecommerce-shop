@@ -6,7 +6,7 @@
       class="input-text subscribe-form__input"
       :style="{ background: bgInput, color: colorTextz }"
     />
-    <ui-button :color="colorButton || 'primary'">Sign Up</ui-button>
+    <ui-button :color="colorButton || 'dark-primary'">Sign Up</ui-button>
   </form>
 </template>
 
