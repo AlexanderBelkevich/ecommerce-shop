@@ -6,8 +6,9 @@
       colorTitle="#fff"
       colorDescription="#fff"
       background="var(--dark-primary)"
+      :mobilePadding="true"
     />
-    <img src="/img/room.jpg" alt="room" />
+    <img src="/img/room.jpg" alt="room" class="ideas-image" />
   </div>
 </template>
 
@@ -22,5 +23,17 @@ import HeroInformation from "@/components/HeroInformation.vue";
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 16px;
+  @media screen and (max-width: 767px) {
+    padding: 0;
+    grid-template-columns: 1fr;
+  }
+  &-image {
+    height: 100%;
+    object-fit: cover;
+    @media screen and (max-width: 767px) {
+      margin-top: 24px;
+      height: auto;
+    }
+  }
 }
 </style>

@@ -7,6 +7,7 @@
         'btn--dark-primary': color === 'dark-primary',
         'btn--secondary': color === 'secondary',
         'btn--lightgray': color === 'lightgray',
+        'btn--fullwidth': mobileFullWidth,
       },
     ]"
   >
@@ -21,6 +22,7 @@
         'btn--dark-primary': color === 'dark-primary',
         'btn--secondary': color === 'secondary',
         'btn--lightgray': color === 'lightgray',
+        'btn--fullwidth': mobileFullWidth,
       },
     ]"
   >
@@ -46,6 +48,10 @@ const props = defineProps({
     type: String,
     default: "dark-primary",
   },
+  mobileFullWidth: {
+    type: Boolean,
+    default: false,
+  },
 });
 </script>
 
@@ -60,6 +66,11 @@ const props = defineProps({
   font-size: 16px;
   height: 56px;
   text-decoration: none;
+  white-space: nowrap;
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;
+    font-size: 15px;
+  }
   &:hover {
     opacity: 0.8;
   }
@@ -78,6 +89,11 @@ const props = defineProps({
   &--white {
     background: #fff;
     color: var(--dark-primary);
+  }
+  &--fullwidth {
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
   }
 }
 </style>
