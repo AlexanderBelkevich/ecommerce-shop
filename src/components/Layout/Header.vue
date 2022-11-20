@@ -6,13 +6,11 @@
           <img
             src="/svg/header-search.svg"
             alt="search"
-            class="header-top__icon"
-          />
+            class="header-top__icon" />
         </div>
         <div
           class="header-top-mobile-menu"
-          @click="isOpenedMobileMenu = !isOpenedMobileMenu"
-        >
+          @click="isOpenedMobileMenu = !isOpenedMobileMenu">
           <img src="/svg/menu.svg" alt="menu" class="header-top__icon" />
         </div>
       </div>
@@ -22,6 +20,9 @@
         <div class="header-top-right__cart">
           <router-link to="/cart">
             <img src="/svg/header-cart.svg" alt="cart" />
+            <span class="header-top-right__count" v-if="cartStore.cart.length">
+              {{ cartStore.cart.length }}
+            </span>
           </router-link>
         </div>
         <div class="header-top-right__user">
@@ -36,24 +37,25 @@
         class="header-menu__link"
         :to="element.path"
         v-for="(element, i) of menu"
-        :key="i"
-        >{{ element.name }}</router-link
-      >
+        :key="i">
+        {{ element.name }}
+      </router-link>
     </div>
     <div class="header-menu-mobile" v-if="isOpenedMobileMenu">
       <router-link
         class="header-menu-mobile__link"
         :to="element.path"
         v-for="(element, i) of menu"
-        :key="i"
-        >{{ element.name }}</router-link
-      >
+        :key="i">
+        {{ element.name }}
+      </router-link>
     </div>
   </header>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { useCartStore } from "@/store/cart.js";
 
 const menu = [
   {
@@ -71,6 +73,7 @@ const menu = [
 ];
 
 const isOpenedMobileMenu = ref(false);
+const cartStore = useCartStore();
 </script>
 
 <style lang="scss" scoped>
@@ -122,6 +125,22 @@ const isOpenedMobileMenu = ref(false);
       }
       &__cart {
         margin-right: 16px;
+        position: relative;
+      }
+      &__count {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #000;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: -50%;
+        bottom: 0;
       }
     }
   }

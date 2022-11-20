@@ -1,9 +1,11 @@
 <template>
   <div class="product">
-    <router-link :to="`/${id}`">
+    <router-link :to="`products/${id}`">
       <img :src="img" :alt="title" class="product-image" />
     </router-link>
-    <router-link :to="`/${id}`" class="product-name">{{ title }}</router-link>
+    <router-link :to="`products/${id}`" class="product-name">
+      {{ title }}
+    </router-link>
     <span class="product-price">£{{ price }}</span>
   </div>
 </template>
